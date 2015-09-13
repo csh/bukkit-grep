@@ -24,3 +24,12 @@ Will only send messages usually sent by `/help 1` that match the following expre
 ## Why would I use this?!?!
 
 I dislike PermissionsEx for the simple reason that the `/pex` command is incredibly hard to read, or rather it's incredibly hard to find what you want in it. It's an inconvenience to constantly open the wiki pages and check arguments, syntax, etc. That's why I'd use this plugin, I don't know about you.
+
+## Images
+
+##### Before
+![Imgur](http://i.imgur.com/s2HkLHK.png)
+
+##### After
+![Imgur](http://i.imgur.com/N4Zt51z.png)
+

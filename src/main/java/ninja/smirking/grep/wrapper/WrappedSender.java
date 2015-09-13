@@ -8,7 +8,6 @@ import org.bukkit.permissions.PermissionAttachment;
 import org.bukkit.permissions.PermissionAttachmentInfo;
 import org.bukkit.plugin.Plugin;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
@@ -27,9 +26,14 @@ public class WrappedSender implements CommandSender {
         this.sender = sender;
     }
 
+    private static String escape(String pattern) {
+        pattern = pattern.replace("*", ".*");
+        return (".*").concat(pattern).concat(".*");
+    }
+
     @Override
     public void sendMessage(String message) {
-        if(pattern.matcher(ChatColor.stripColor(message)).matches()) {
+        if (pattern.matcher(ChatColor.stripColor(message)).matches()) {
             sender.sendMessage(message);
         }
     }
@@ -39,7 +43,7 @@ public class WrappedSender implements CommandSender {
         List<String> queue = Arrays.stream(messages)
                 .filter(message -> pattern.matcher(message).matches())
                 .collect(Collectors.toList());
-        if(queue.size() > 0) {
+        if (queue.size() > 0) {
             sender.sendMessage(queue.toArray(new String[queue.size()]));
         }
     }
@@ -117,10 +121,5 @@ public class WrappedSender implements CommandSender {
     @Override
     public void setOp(boolean value) {
         sender.setOp(value);
-    }
-
-    private static String escape(String pattern) {
-        pattern = pattern.replace("*", ".*");
-        return (".*").concat(pattern).concat(".*");
     }
 }

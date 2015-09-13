@@ -18,7 +18,7 @@ public class WrappedSenderTest {
     public void testSendMessageArray() throws Exception {
         StandardOutputSender sender = new StandardOutputSender("testSendMessageArray");
         WrappedSender wrapped = new WrappedSender(sender, "foo");
-        String[] messages = new String[] {
+        String[] messages = new String[]{
                 "foo",
                 "bar",
                 "baz",

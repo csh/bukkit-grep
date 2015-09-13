@@ -1,0 +1,7 @@
+main: ninja.smirking.grep.GrepPlugin
+author: SmirkingNinja
+version: ${project.version}
+name: Grep
+commands:
+  grep:
+    description: Filter the output of a given command

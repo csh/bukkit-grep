@@ -1,4 +1,4 @@
-bukkit-grep
+bukkit-grep [![Build Status](https://travis-ci.org/Fireflies/bukkit-grep.svg)](https://travis-ci.org/Fireflies/bukkit-grep)
 ===========
 
 Simple plugin for filtering command output.
